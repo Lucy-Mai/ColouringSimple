@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <!--SEO-->
+        <meta charset="UTF-8"> <!--Code for encoding system-->
+        <meta name="description" content="Colour in your choice of picture">
+        <meta name="keywords" content="paint, colour, fun"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Define how you want content to be rendered in viewport-->
+        <meta name="author" content="">
+    
+        <title>Get Painting!- Home</title>
+    
+        <link rel="stylesheet" href="style.css"><!--Link to stylesheet-->
+        
+    </head> 
+    <body>
+        <section id="canvas"><!--Linked to JS script-->
+            <h1>Your masterpiece:</h1>
+
+                <div class="canvas-area"><!--Canvas area where painting can occur-->
+                    <canvas id="drawing" width="600" height="600"></canvas>
+                    <br><br>
+                </div>
+                
+                <div class="tool-selection"><!--Tool selection area with pen, pencil and eraser options. Pen is default-->
+                    <h3>Select a Tool:</h3>
+                    <button id="penTool">Pen</button>&nbsp;<!--Spacebar to create space between buttons-->
+                    <button id="pencilTool">Pencil</button>&nbsp;
+                    <button id="eraserTool">Eraser</button>
+                    
+                </div>
+                
+                <div class="pen-size"><!--Pen size selector, with slider and display (between 1 and 20)-->
+                    <label for="penSize"><b>Drag to select pen size:</b></label>
+                    <br><br>
+                    <input type="range" id="penSize" min="1" max="20" value="5"><!--Initial pen size is 5-->
+                    <span  id="penSizeValue">5</span> <!-- This will display the current pen size -->
+                    
+                </div>
+                
+                <div class="colour-picker"><!--Pen colour selector, using 'color' input-->
+                    <label for="colourPicker"><b>Select a colour:</b></label>
+                    <br><br>
+                    <input class="colour-picker-icon" type="color" id="colourPicker" value="#000000"><!--Inital pen colour will be black-->
+                </div>
+
+                <script src="script.js"></script><!--Linking to JavaScript-->
+        </section>
+
+
+
+
+
+
+    </body>
+</html>
+        
