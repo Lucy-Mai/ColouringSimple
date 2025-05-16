@@ -53,7 +53,7 @@ function draw(x,y) {
     if (currentTool === "eraser") 
     {
         ctx.globalCompositeOperation = "destination-out";
-        const radius = penSizeInput.value*2;//set radius of the eraser, multiplied input by 1.5 because eraser is generally larger
+        const radius = penSizeInput.value*1.5;//set radius of the eraser, multiplied input by 1.5 because eraser is generally larger
         ctx.beginPath();
         ctx.arc(x, y, radius, 0, Math.PI * 2); // (x, y) is the center, radius is the size of the circle using the variable as assigned above
         ctx.fill();
