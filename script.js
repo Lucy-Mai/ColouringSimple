@@ -50,25 +50,34 @@ penSizeInput.addEventListener("input", function () {//listens for when slider is
 });
 
 function draw(x,y) { 
-    if (currentTool === "eraser") {
-        ctx.globalCompositeOperation = "destination-out"; // 'destination-out' comes from Canvas' 2D API and acts as erasing mode by cutting out previous drawing
-    } else if (currentTool === "pen") {
+    if (currentTool === "eraser") 
+    {
+        ctx.globalCompositeOperation = "destination-out";
+        const radius = penSizeInput.value*2;//set radius of the eraser, multiplied input by 1.5 because eraser is generally larger
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, Math.PI * 2); // (x, y) is the center, radius is the size of the circle using the variable as assigned above
+        ctx.fill();
+    } 
+    else if (currentTool === "pen") 
+    {
         ctx.globalCompositeOperation = "source-over";//'source-over' (canvas 2d API) acts like the normal drawing tool
         ctx.fillStyle = colourPicker.value;//drawing will be filled with the colour selected from the color picker
-    } else {
+        ctx.globalAlpha = 1;//have to inlclude this or will remain 0.3 after pencil has been used
+        const radius = penSizeInput.value;//set radius of the pen or eraser circle to be the input from the pen size selector
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, Math.PI * 2); // (x, y) is the center, radius is the size of the circle using the variable as assigned above
+        ctx.fill();
+    }
+    else if (currentTool === "pencil")
+    {
         ctx.globalCompositeOperation = "source-over";//'source-over' (canvas 2d API) acts like the normal drawing tool
         ctx.globalAlpha = 0.3;//setting alpha value when pencil is selected to give impression of pencil-like strokes
         ctx.fillStyle = colourPicker.value;//drawing will be filled with the colour selected from the color picker
-        
-        
+        const radius = penSizeInput.value;//set radius of the pen or eraser circle to be the input from the pen size selector
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, Math.PI * 2); // (x, y) is the center, radius is the size of the circle using the variable as assigned above
+        ctx.fill();
     }
-
-    const radius = penSizeInput.value;//set radius of the pen or eraser circle to be the input from the pen size selector
-    ctx.beginPath();
-    ctx.arc(x, y, radius, 0, Math.PI * 2); // (x, y) is the center, radius is the size of the circle using the variable as assigned above
-    ctx.fill();
-    
-    
 }
 
 
