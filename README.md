@@ -2,8 +2,8 @@ Simple colouring website to practice using the Canvas element and JavaScript in 
 
 Features: 
 1. Tool selector including pen, pencil and eraser using buttons
-2. Pen size slider with display for size input using <input type="range">
-3. Pen colour selector using <input type ="color">
+2. Pen size slider with display for size input using input type="range"
+3. Pen colour selector using input type ="color"
 
 I plan to make a future, more advanced website with features inlcuding:
 1. Multiple pages for choosing templates and backgrounds like lined or for handwriting practice
